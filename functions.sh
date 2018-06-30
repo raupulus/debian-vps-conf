@@ -99,14 +99,22 @@ actualizarGIT() {
     fi
 }
 
+##
+## Agrega el archivo de configuración para el host virtual en
+##
 agregarConfigApache() {
-
-
+    msg 'Configurando Host Virtual'
+    ## Entrar al repositorio
+    ## copiar el archivo .conf de la raíz
+    ## pegarlo en /etc/apache2/sites-available
+    ## activarlo con a2enssite ????
 }
 
+##
+## Agrega al archivo /etc/hosts la configuración del sitio virtual
+##
 agregarConfigHost() {
-
-
+    msg 'Añadiendo a /etc/hosts'
 }
 
 ##
@@ -119,8 +127,3 @@ reiniciarServicio() {
         sudo systemctl restart "$x"
     done
 }
-
-
-
-
-exit 0

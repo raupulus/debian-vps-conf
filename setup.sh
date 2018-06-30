@@ -39,6 +39,9 @@ USER=$(whoami)   ## Usuario que ejecuta el script
 VERSION='0.0.1'  ## Versión en desarrollo
 LOGERROR="$WORKSCRIPT/errores.log"  ## Archivo donde almacenar errores
 
+## Configuraciones
+DIR_APACHE='/var/www/html/Publico'
+
 ############################
 ##     IMPORTACIONES      ##
 ############################

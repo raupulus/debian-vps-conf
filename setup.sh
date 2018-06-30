@@ -5,7 +5,7 @@
 ## @copyright  Copyright © 2018 Raúl Caro Pastorino
 ## @license    https://wwww.gnu.org/licenses/gpl.txt
 ## @email      tecnico@fryntiz.es
-## @web        www.fryntiz.es
+## @web        https://fryntiz.es
 ## @github     https://github.com/fryntiz
 ## @gitlab     https://gitlab.com/fryntiz
 ## @twitter    https://twitter.com/fryntiz

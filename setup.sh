@@ -16,14 +16,7 @@
 ############################
 ##     INSTRUCCIONES      ##
 ############################
-## Script principal
-## Desde aquí se llamaran a todos los demás scripts separando
-## funciones para cada uno de ellos.
-##
-## Ten en cuenta que este script hace modificaciones en el equipo a mi gusto
-## Puede no funcionar correctamente si usas software de repositorios externo
-## Probablemente no funcionará en otras distribuciones distintas
-## a Debian rama Stable.
+## Script principal con la lógica del programa
 
 ############################
 ##       CONSTANTES       ##
@@ -54,5 +47,44 @@ source "$WORKSCRIPT/functions.sh"
 ###########################
 ##       FUNCIONES       ##
 ###########################
+
+recorrerLista() {
+    if [[ "$1" = '' ]] || [[ "$2" = '' ]]; then
+        return 1
+    fi
+
+    ## Cada iteración del bucle:
+
+    if [[ "$2" = 'general' ]]; then
+        repo=descargarGIT
+    elif [[ "$2" = 'gitlab' ]]; then
+        repo=descargarGitLab
+    elif [[ "$2" = 'github' ]]; then
+        repo=descargarGitHub
+    fi
+
+    agregarConfigApache
+    agregarConfigHost
+    agregar_DNS
+}
+
+desplegarGeneral() {
+    msg 'Desplegando repositorios GIT generales'
+    recorrerLista 'repos.list' 'general'
+}
+
+desplegarGitLab() {
+    msg "Desplegando repositorios desde$RO GitLab"
+    recorrerLista 'reposGitLab.list' 'gitlab'
+}
+
+desplegarGitHub() {
+    msg "Desplegando repositorios desde$RO GitHub"
+    recorrerLista 'reposGitHub.list' 'github'
+}
+
+desplegarGeneral
+desplegarGitHub
+desplegarGitLab
 
 exit 0

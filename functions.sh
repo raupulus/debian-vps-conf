@@ -39,7 +39,7 @@ agregar_DNS() {
 ## @param  $2  String  Nombre del Repositorio
 ## @param  $3  String  Lugar donde guardamos el repositorio
 ##
-gitHub() {
+descargarGitHub() {
     msg "Preparando para descargar desde$RO GitHub"
     descargarGIT "$2" "https://github.com/$1/$2" "$DIR_APACHE/$3"
 }
@@ -51,7 +51,7 @@ gitHub() {
 ## @param  $3  String  Lugar donde guardamos el repositorio
 ##
 ## Ejemplo:    gitLab fryntiz curriculum fryntiz/curriculum
-gitLab() {
+descargarGitLab() {
     msg "Preparando para descargar desde$RO GitLab"
     descargarGIT "$2" "https://gitlab.com/$1/$2" "$DIR_APACHE/$3"
 }
